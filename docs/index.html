@@ -1,1 +1,254 @@
-hellow
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N X R O B U X</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background-color: #121215;
+            color: #ffffff;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .header {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .credit-options {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .credit-box {
+            background-color: #121215;
+            padding: 15px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: background 0.3s;
+            border: 1px solid #2e3032;
+        }
+
+        .credit-box:hover {
+            background-color: #2e3032;
+        }
+
+        .credit-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .credit-box img {
+            width: 50px;
+        }
+
+        .credit-box h2 {
+            font-size: 18px;
+            margin: 0;
+        }
+
+        .credit-price {
+            font-size: 16px;
+            font-weight: bold;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        .original-price {
+            color: #888;
+            text-decoration: line-through;
+            font-size: 14px;
+        }
+
+        .discount {
+            color: yellow;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            position: relative;
+            background: #1a1b1e;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .modal img {
+            width: 300px;
+            height: 300px;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+
+        .button-group {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .close-btn {
+            background: transparent;
+            color: white;
+            border: 1px solid white;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .copy-btn {
+            background: white;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .open-modal-btn {
+            margin-top: 30px;
+            background: white;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        @media (max-width: 600px) {
+            .credit-options {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            .credit-box {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+                flex-wrap: wrap;
+                padding: 10px;
+            }
+
+            .credit-info {
+                flex: 1;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .credit-price {
+                min-width: 80px;
+                text-align: right;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">Valores Robux</div>
+        <div class="credit-options">
+            <div class="credit-box">
+                <div class="credit-info">
+                    <img src="rb.png" alt="Credits">
+                    <h2>1000 Robux</h2>
+                </div>
+                <div class="credit-price">R$35,00</div>
+            </div>
+            <div class="credit-box">
+                <div class="credit-info">
+                    <img src="rb.png" alt="Credits">
+                    <h2>2000 Robux</h2>
+                </div>
+                <div class="credit-price"><span class="original-price">R$70,00</span> <span class="discount">R$68,00</span></div>
+            </div>
+            <div class="credit-box">
+                <div class="credit-info">
+                    <img src="rb.png" alt="Credits">
+                    <h2>3000 Robux</h2>
+                </div>
+                <div class="credit-price"><span class="original-price">R$105,00</span> <span class="discount">R$103,00</span></div>
+            </div>
+            <div class="credit-box">
+                <div class="credit-info">
+                    <img src="rb.png" alt="Credits">
+                    <h2>5000 Robux</h2>
+                </div>
+                <div class="credit-price"><span class="original-price">R$175,00</span> <span class="discount">R$172,00</span></div>
+            </div>
+        </div>
+
+        <div class="info-section" style="margin-top: 20px; padding: 15px; background-color: #1a1b1e; border-radius: 8px; text-align: left;">
+            <h3 style="margin-bottom: 10px;">Informações</h3>
+            <p><strong>Modo de pagamento:</strong> PIX</p>
+            <p>Robux enviados instantaneamente, porém é necessário se juntar 15 dias antes nos grupos.</p>
+        </div>
+        <button class="open-modal-btn" onclick="openModal()">Fazer pagamento</button>
+        <div class="modal" id="modal" style="display: none;">
+            <div class="modal-content">
+                <h2>Pagamento / QR</h2>
+                <img src="qr.png" alt="Placeholder Image">
+                <br><p>ou</p>
+                <p><strong>Chave Email: </strong>nx@s2.rip</p><br>
+                <button class="copy-btn" onclick="copyText()">Copiar chave</button>
+                <button class="close-btn" onclick="closeModal()">Fechar</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        function openModal() {
+            document.getElementById('modal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+        function copyText() {
+            navigator.clipboard.writeText("nx@s2.rip").then(() => {
+                alert("Chave Email copiada!");
+            });
+        }
+    </script>
+</body>
+</html>
